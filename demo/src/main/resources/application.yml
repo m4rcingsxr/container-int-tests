@@ -1,0 +1,71 @@
+quarkus:
+  http:
+    port: 5975
+    auth:
+      basic: true
+      permission:
+        basic:
+          policy: authenticated
+          methods: POST
+          paths: /api/v1/security/login
+          auth-mechanism: basic
+  flyway:
+    migrate-at-start: true
+  hibernate-orm:
+    physical-naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategySnakeCaseImpl
+
+mp:
+  jwt:
+    verify:
+      publickey:
+        location: publicKey.pem
+smallrye:
+  jwt:
+    new-token:
+      lifespan: 3600
+    sign:
+      key:
+        location: privateKey.pem
+
+"%local":
+  quarkus:
+    package:
+      jar:
+        enabled: false
+    native:
+      enabled: true
+      container-build: true
+      container-runtime: docker
+      resources:
+        includes: "publicKey.pem,privateKey.pem"
+    container-image:
+      build: true
+    flyway:
+      clean-at-start: true
+    datasource:
+      devservices:
+        image-name: postgres:17:4
+        port: 55432
+        username: quarkus
+        password: quarkus
+    hibernate-orm:
+      log:
+        format-sql: true
+        sql: true
+        bind-parameters: true
+
+"%test":
+  quarkus:
+    flyway:
+      clean-at-start: true
+    hibernate-orm:
+      log:
+        format-sql: true
+        sql: true
+        bind-parameters: true
+    datasource:
+      devservices:
+        image-name: postgres:17:4
+        port: 55432
+        username: quarkus
+        password: quarkus

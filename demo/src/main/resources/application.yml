@@ -34,6 +34,29 @@ smallrye:
         enabled: false
     native:
       enabled: true
+      resources:
+        includes: "publicKey.pem,privateKey.pem"
+    flyway:
+      clean-at-start: true
+    datasource:
+      devservices:
+        image-name: postgres:17:4
+        port: 55432
+        username: quarkus
+        password: quarkus
+    hibernate-orm:
+      log:
+        format-sql: true
+        sql: true
+        bind-parameters: true
+
+"%docker":
+  quarkus:
+    package:
+      jar:
+        enabled: false
+    native:
+      enabled: true
       container-build: true
       container-runtime: docker
       resources:

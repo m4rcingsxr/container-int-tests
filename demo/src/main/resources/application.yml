@@ -17,4 +17,7 @@ quarkus:
         format-sql: true
         sql: true
         bind-parameters: true
-
+    datasource:
+      devservices:
+        enabled: true
+        port: 55432

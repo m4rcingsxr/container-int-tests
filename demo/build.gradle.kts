@@ -17,23 +17,17 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
   implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-  implementation("io.quarkus:quarkus-hibernate-reactive")
-  implementation("io.quarkus:quarkus-rest")
   implementation("io.quarkus:quarkus-flyway")
   implementation("io.quarkus:quarkus-kotlin")
   implementation("io.quarkus:quarkus-smallrye-jwt")
   implementation("io.quarkus:quarkus-hibernate-reactive-panache-kotlin")
-  implementation("io.quarkus:quarkus-reactive-pg-client")
-  implementation("io.quarkus:quarkus-smallrye-jwt-build")
-  implementation("io.quarkus:quarkus-rest-kotlin-serialization")
   implementation("io.quarkus:quarkus-jdbc-postgresql")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
   implementation("io.quarkus:quarkus-arc")
   testImplementation("io.quarkus:quarkus-junit5")
   testImplementation("io.rest-assured:rest-assured")
   testImplementation("io.rest-assured:kotlin-extensions")
-  implementation("io.quarkus:quarkus-mutiny")
-  implementation("io.quarkus:quarkus-security-jpa-reactive")
+
   implementation("io.quarkus:quarkus-config-yaml")
   implementation("io.quarkus:quarkus-container-image-docker")
 }

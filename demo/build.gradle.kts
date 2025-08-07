@@ -17,9 +17,7 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
   implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-  implementation("io.quarkus:quarkus-flyway")
   implementation("io.quarkus:quarkus-kotlin")
-  implementation("io.quarkus:quarkus-smallrye-jwt")
   implementation("io.quarkus:quarkus-hibernate-reactive-panache-kotlin")
   implementation("io.quarkus:quarkus-jdbc-postgresql")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")

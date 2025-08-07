@@ -3,8 +3,6 @@ quarkus:
     integration-test-profile: test
   http:
     port: 5975
-  flyway:
-    migrate-at-start: true
 
 "%test":
   quarkus:

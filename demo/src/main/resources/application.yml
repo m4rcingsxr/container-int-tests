@@ -17,4 +17,6 @@ quarkus:
       devservices:
         enabled: true
         port: 55432
+        username: quarkus
+        password: quarkus
 

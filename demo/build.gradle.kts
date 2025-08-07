@@ -1,7 +1,7 @@
 plugins {
-  kotlin("jvm") version "2.1.21"
-  kotlin("plugin.allopen") version "2.1.21"
-  kotlin("plugin.serialization") version "2.1.21"
+  kotlin("jvm") version "2.2.0"
+  kotlin("plugin.allopen") version "2.2.0"
+  kotlin("plugin.serialization") version "2.2.0"
   kotlin("plugin.jpa") version "2.2.0"
   id("io.quarkus")
 }
@@ -17,9 +17,7 @@ val quarkusPlatformVersion: String by project
 
 dependencies {
   implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
-  implementation("io.quarkus:quarkus-flyway")
   implementation("io.quarkus:quarkus-kotlin")
-  implementation("io.quarkus:quarkus-smallrye-jwt")
   implementation("io.quarkus:quarkus-hibernate-reactive-panache-kotlin")
   implementation("io.quarkus:quarkus-jdbc-postgresql")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")

@@ -5,8 +5,6 @@ quarkus:
     port: 5975
   flyway:
     migrate-at-start: true
-  hibernate-orm:
-    physical-naming-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategySnakeCaseImpl
 
 "%test":
   quarkus:

@@ -28,7 +28,7 @@ internal object SessionInitializer {
     return Configuration().apply {
       setProperty(AvailableSettings.JAKARTA_JDBC_URL, "jdbc:postgresql://localhost:$port/quarkus")
       setProperty(AvailableSettings.JAKARTA_JDBC_USER, username)
-      setProperty(AvailableSettings.JAKARTA_JDBC_PASSWORD, username)
+      setProperty(AvailableSettings.JAKARTA_JDBC_PASSWORD, password)
       setProperty(AvailableSettings.SHOW_SQL, true)
       setProperty(AvailableSettings.FORMAT_SQL, true)
       setProperty(AvailableSettings.PHYSICAL_NAMING_STRATEGY, namingStrategy)
